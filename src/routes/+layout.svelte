@@ -40,8 +40,10 @@
                 {@render children()}
             </div>
         </div>
-        <footer class="mt-16 prose prose-zinc prose-invert font-mono">
+        <footer class="flex flex-col text-center mt-16 prose prose-zinc prose-invert font-mono">
             <span>&copy; {new Date().getFullYear()} ArpaMail</span>
+            <span>Made with ❤️ by <a href="https://lemonyte.com">Lemonyte</a></span>
+            <span><a href="https://github.com/arpamail">Open-source</a></span>
         </footer>
     </div>
 </div>
