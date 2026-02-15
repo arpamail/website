@@ -27,9 +27,9 @@
 
 <h2 id="about"><a href="#about">What is this?</a></h2>
 <p>
-    Do you want a free, anonymous email address that forwards to your real inbox?
-    Do you want to reply anonymously without exposing your real address?
-    Just need a whole bunch of disposable emails to protect your privacy and avoid spam?
+    Do you want a free, anonymous email address that forwards to your real inbox? Do you want to reply anonymously
+    without exposing your real address? Just need a whole bunch of disposable emails to protect your privacy and avoid
+    spam?
 </p>
 <p>
     <strong>ArpaMail</strong> has you covered, and you don't even need an account!
@@ -99,6 +99,13 @@
                 <td>✅</td>
                 <td>❌</td>
                 <td>❌</td>
+            </tr>
+            <tr>
+                <td>Open-source</td>
+                <td>✅</td>
+                <td>❌</td>
+                <td>✅</td>
+                <td>✅</td>
             </tr>
             <tr>
                 <td>Free to use</td>
@@ -189,8 +196,8 @@
 <h2 id="get-your-alias"><a href="#get-your-alias">Get your email alias</a></h2>
 <div>
     <p>
-        Alright, enough mumbo jumbo! Go ahead and create an email alias below. We'll send you an email with
-        instructions to verify your address.
+        Alright, enough mumbo jumbo! Go ahead and create an email alias below. We'll send you instructions to verify
+        your address.
     </p>
     <form method="post" class="flex flex-col gap-4 my-4" use:enhance>
         <input
@@ -226,7 +233,7 @@
             ]}
             onclick={copy_alias}
         >
-            {form?.alias_address || "The alias will appear here..."}
+            {form?.alias_address || "Your alias will appear here..."}
         </button>
         <div class="flex">
             <span class={[form?.error ? "text-red-400" : "text-zinc-400"]}>
