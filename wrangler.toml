@@ -1,0 +1,21 @@
+"$schema" = "./node_modules/wrangler/config-schema.json"
+name = "arpamail-website"
+main = ".svelte-kit/cloudflare/_worker.js"
+compatibility_date = "2026-02-06"
+compatibility_flags = ["nodejs_als", "nodejs_compat"]
+
+[observability]
+enabled = true
+
+[assets]
+binding = "ASSETS"
+directory = ".svelte-kit/cloudflare"
+
+[[routes]]
+pattern = "arpamail.lemonyte.com"
+custom_domain = true
+
+[[services]]
+binding = "ALIAS_MANAGER"
+service = "arpamail-relay"
+entrypoint = "AliasManager"

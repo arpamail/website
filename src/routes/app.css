@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+
+@theme {
+    --color-accent: oklch(0.52 0.2 287);
+    --color-accent-light: oklch(0.74 0.1348 287);
+}
+
+@layer base {
+    :root {
+        @apply bg-zinc-900;
+    }
+}
+
+.prose {
+    @variant prose-a {
+        @apply decoration-accent-light hover:decoration-2;
+    }
+
+    :is(h1, h2, h3, h4, h5, h6) a {
+        font-weight: inherit;
+    }
+
+    sup {
+        @apply text-base align-middle;
+    }
+
+    form input {
+        @apply bg-zinc-800 focus:outline-accent-light;
+        color: var(--tw-prose-invert-body);
+    }
+
+    form input::placeholder {
+        @apply opacity-50;
+        color: var(--tw-prose-invert-body);
+    }
+
+    form *[type="submit"] {
+        @apply px-2 py-1 bg-accent not-disabled:hover:brightness-75 disabled:cursor-not-allowed disabled:opacity-50 disabled:grayscale;
+    }
+
+    form *[type="checkbox"] {
+        @apply focus:ring-0 focus:outline-0;
+    }
+}
