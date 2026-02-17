@@ -167,10 +167,7 @@
 <p>You should also be aware of the following limitations:</p>
 <ul>
     <li>You must verify your alias address before you can use it.</li>
-    <li>Aliases automatically expire after <strong>6 hours</strong> of inactivity (sending and receiving).</li>
-    <ul>
-        <li><i>This will be extended if testing goes well.</i></li>
-    </ul>
+    <li>Aliases automatically expire after <strong>30 days</strong> of inactivity (sending and receiving).</li>
     <li>There is a rate-limit of 2 emails per minute.</li>
     <li><code>Reply-To</code> headers are ignored.</li>
 </ul>
@@ -183,7 +180,7 @@
     <li>Attachments</li>
 </ul>
 <p>
-    Need higher limits or have a feature request? We'd love to hear from you at <a
+    Need higher limits, longer-living aliases, or have a feature request? We'd love to hear from you at <a
         href="mailto:support@b.4.1.5.0.7.4.0.1.0.0.2.ip6.arpa">support@b.4.1.5.0.7.4.0.1.0.0.2.ip6.arpa</a
     >!
 </p>
