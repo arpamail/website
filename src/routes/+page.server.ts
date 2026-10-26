@@ -25,7 +25,11 @@ export const actions = {
             await platform.env.ALIAS_MANAGER.create_alias({ real_address: email });
             return { message: "Check your inbox for your new alias and verification link :)", error: false };
         } catch (error) {
-            return fail(500, { message: `${error}`, error: true });
+            console.log({
+                message: "Failed to create new alias",
+                error: error instanceof Error ? error.message : `${error}`
+            })
+            return fail(500, { message: "Something went wrong but it's not your fault :(", error: true });
         }
     },
 };
