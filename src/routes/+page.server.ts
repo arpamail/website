@@ -22,16 +22,8 @@ export const actions = {
         }
 
         try {
-            const { alias_address } = await platform.env.ALIAS_MANAGER.create_alias({ real_address: email });
-
-            return {
-                message: "",
-                error: false,
-                alias_address,
-                remaining_aliases:
-                    (await platform.env.ALIAS_MANAGER.max_free_aliases) -
-                    (await platform.env.ALIAS_MANAGER.get_alias_count(email)),
-            };
+            await platform.env.ALIAS_MANAGER.create_alias({ real_address: email });
+            return { message: "Check your inbox for your new alias and verification link :)", error: false };
         } catch (error) {
             return fail(500, { message: `${error}`, error: true });
         }

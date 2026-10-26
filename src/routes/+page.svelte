@@ -9,20 +9,6 @@
     let consented = $state(false);
     let passed_captcha = $state(false);
     let submit_enabled = $derived(email.length > 0 && consented && passed_captcha);
-    let copied = $state(false);
-
-    const copy_alias = async () => {
-        if (!form?.alias_address) {
-            return;
-        }
-        try {
-            await navigator.clipboard.writeText(form.alias_address);
-            setTimeout(() => (copied = false), 1000);
-            copied = true;
-        } catch (error) {
-            console.error("Failed to copy text: ", error);
-        }
-    };
 </script>
 
 <h2 id="about"><a href="#about">What is this?</a></h2>
@@ -222,23 +208,5 @@
 </div>
 
 <div>
-    <div class="flex flex-col gap-2">
-        <button
-            class={[
-                "font-bold text-sm border-2 border-dashed p-4 text-center border-accent",
-                form?.alias_address ? "text-accent-light cursor-pointer" : "text-zinc-400",
-            ]}
-            onclick={copy_alias}
-        >
-            {form?.alias_address || "Your alias will appear here..."}
-        </button>
-        <div class="flex">
-            <span class={[form?.error ? "text-red-400" : "text-zinc-400"]}>
-                {form?.message ? form.message : copied ? "Copied!" : form?.alias_address ? "Click to copy" : ""}
-            </span>
-            <span class="text-zinc-400 ml-auto">
-                {form?.remaining_aliases !== undefined ? `Remaining aliases: ${form.remaining_aliases}` : ""}
-            </span>
-        </div>
-    </div>
+    <span class={[form?.error ? "text-red-400" : "text-zinc-400"]}>{form?.message ?? ""}</span>
 </div>
