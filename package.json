@@ -14,7 +14,7 @@
         "cf-typegen": "wrangler types ./src/worker-configuration.d.ts -c wrangler.toml -c ../relay/wrangler.toml"
     },
     "devDependencies": {
-        "@sveltejs/adapter-cloudflare": "^7.2.9",
+        "@sveltejs/adapter-cloudflare": "^8.0.1",
         "@sveltejs/kit": "^2.70.3",
         "@sveltejs/vite-plugin-svelte": "^7.3.1",
         "@tailwindcss/forms": "^0.5.11",
